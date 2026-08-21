@@ -21,7 +21,7 @@ print(b, "type:", type(b))
 a = int(input())
 b = int(input())
 
-# print(a, b)
+print(a, b)
 
 a, b, c = input().split()
 print(a, type(a))
