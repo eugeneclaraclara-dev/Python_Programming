@@ -8,7 +8,6 @@ print(a, type(a))
 
 # 2진수, 8진수, 16진수
 print(bin(a), oct(a), hex(a))
-print(ord("A"))
 print(chr(65))
 
 # int 데이터의 표현 범위
@@ -52,3 +51,4 @@ print(float(10))
 print(int(3.14))
 print(int("100"))
 print(float("3.14"))
+print(str(10))
