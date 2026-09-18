@@ -54,6 +54,7 @@ print(tuple(zip(subjects, scores)))
 # ===========================================================
 
 gen = (x for x in range(1, 11))
+print("************")
 print(gen)
 
 print(next(gen))

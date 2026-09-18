@@ -80,10 +80,22 @@ words = ["apple", "banana", "apple", "cherry", "banana", "apple"]
 result = {x: words.count(x) for x in words}  # if x not in words[: words.index(x)]}
 print(result)
 
+# 1) 클래식 for
+count = {}
+for word in words:
+    count[word] = count.get(word, 0) + 1
+
+# 2) dict 컴프리헨션
+print(
+    {word: words.count(word) for word in set(words)}
+)  # words를 set으로 만들어서 반복을 없앤다.
+
+# 3) Counter: 요소 개수를 자동으로 세어주는 딕셔너리 서브클래스
+from collections import Counter  # 폴더 collections 밑에 있는 파일 count를 불러온다
+
+print(dict(Counter(words)))
+
 # ✅ {'apple': 3, 'banana': 2, 'cherry': 1}
-# count = {}
-# for word in words:
-#     count[word] = count.get(word, 0) + 1
 
 
 # 2️⃣ 60점 이상인 경우 합격 설정하기
@@ -107,12 +119,14 @@ print(result)
 stock = {"연필": 10, "지우개": 5, "노트": 3}  # 기존 재고
 incoming = {"지우개": 4, "노트": 7, "볼펜": 12}  # 입고 내역
 
-stock.update({i: stock[i] + j if i in stock else j for i, j in incoming.items()})
-print(stock)
 # ✅ {'연필': 10, '지우개': 9, '노트': 10, '볼펜': 12}
 
+# 1) 클래식 for
 for item, qty in incoming.items():
     stock[item] = stock.get(item, 0) + qty
 
+# 2) dict 컴프리헨션
+stock.update({i: stock[i] + j if i in stock else j for i, j in incoming.items()})
+stock.update({item: stock.get(item, 0) + qty for item, qty in incoming.items()})
 
 print(stock)
