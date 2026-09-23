@@ -127,6 +127,7 @@ for item, qty in incoming.items():
 
 # 2) dict 컴프리헨션
 stock.update({i: stock[i] + j if i in stock else j for i, j in incoming.items()})
+print(stock)
 stock.update({item: stock.get(item, 0) + qty for item, qty in incoming.items()})
 
 print(stock)

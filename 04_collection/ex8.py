@@ -22,12 +22,14 @@ print(a - b)
 print(b - a)  # {5, 6}
 
 # 대칭 차집합 : 한쪽에만 있는 항목
-# print(a.symmetric_difference(b))
-# print(a ^ b)
-# print(x.issubset(b))
+print(a.symmetric_difference(b))
+print(a ^ b)
 
-# print(x.issubset(y))  # 부분집합
-# print(y.isuperset(x))  # 상위집합
+x = {1, 2}
+y = {1, 2, 3, 4}
+
+print(x.issubset(y))  # 부분집합
+print(y.issuperset(x))  # 상위집합
 
 # {1, 2, 5, 6}
 
